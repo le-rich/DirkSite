@@ -8,21 +8,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"
+          }
+        }
+      </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
-    <div class="container mx-auto">
-        <div class="flex flex-row py-5 mx-3">
+    <div class="overflow-hidden">
+        <!-- <div class="flex flex-row py-5 mx-3">
             <h1 class="text-3xl">
                 <b>dirk</b>
             </h1>
             <div class="grow"></div>
             <div class="text-3xl">menu</div>
-        </div>
+        </div> -->
 
-        <div id="main-splash" class="container flex mx-3 px-3 relative mx-auto rounded-lg place-content-center">
-                <video class="w-full rounded-lg" autoplay playsinline loop muted width="100%">
+        <div id="main-splash" class="relative w-screen h-screen">
+                <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay playsinline loop muted>
                     <source src="assets/video/dirksplash.mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -31,21 +39,17 @@
                     and realtime experience consultancy
                 </div>
         </div>
-        <div class="container w-full bg-black text-white mt-5 p-5">
-            <p class="m-5 text-4xl">Creators on a Journey</p>
-            <div class="m-5">
+        <div class="w-screen h-screen bg-black text-white">
+            <p class="text-4xl">What We Do</p>
+            <div class="">
                 <p>We are a collection of ambitious, imaginative and curious creators on a mission to master the craft of digital experience. <br>
                     We solve complex problems to deliver extraordinary realtime experiences.
                 </p>
             </div>
         </div>
-        <div class="container w-full bg-lime-900 text-black p-5">
-            <p class="m-5 text-4xl">Creators on a Journey</p>
-            <div class="m-5">
-                <p>We are a collection of ambitious, imaginative and curious creators on a mission to master the craft of digital experience. <br>
-                    We solve complex problems to deliver extraordinary realtime experiences.
-                </p>
-            </div>
+        <div class="w-screen h-screen bg-lime-900 text-black">
+            <p class="text-4xl">The Team</p>
+
         </div>
     </div>
 </body>
