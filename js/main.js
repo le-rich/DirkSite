@@ -4,7 +4,8 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
 // Set up the scene, camera, and renderer
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 0, 0)
 const renderer = new THREE.WebGLRenderer({
     alpha: true
 });
@@ -21,13 +22,15 @@ loader.load(
     'assets/3d/Dirk3DLogoFull.glb', // Path to your GLB file
     function (gltf) {
         // Called when the model is loaded
-        const newMaterial = new THREE.MeshStandardMaterial({color: 0x00ff00, metalness: 0.7, roughness: 0.4});
+        const newMaterial = new THREE.MeshStandardMaterial({color: 0xffffff, metalness: 0.0, roughness: 1, opacity: 1, transparent: true, side: THREE.DoubleSide});
         gltf.scene.traverse(function (child) {
             if (child.isMesh) {
                 // Adjusting the existing material
                 child.material = newMaterial;
             }
         });
+        gltf.scene.position.set(0,0,-5)
+        dirkLogo = gltf.scene;
         scene.add(gltf.scene);
     },
     function (xhr) {
@@ -42,8 +45,8 @@ loader.load(
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // soft white light
 scene.add(ambientLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-directionalLight.position.set(0, 1, 0); // coming from the top
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+directionalLight.position.set(0, 1, 1); // coming from the top
 scene.add(directionalLight);
 
 // // Add a cube
@@ -59,8 +62,8 @@ const clock = new THREE.Clock()
 const tick = () => 
 {
     const elapsedTime = clock.getElapsedTime();
-    // cube.rotation.x += 0.01;
-    // cube.rotation.y += 0.01;
+    // dirkLogo.rotation.x += 0.01;
+    // dirkLogo.rotation.y += 0.01;
 
 
     renderer.render(scene, camera);
