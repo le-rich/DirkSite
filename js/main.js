@@ -4,8 +4,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
 // Set up the scene, camera, and renderer
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 0, 0)
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({
     alpha: true
 });
@@ -29,9 +28,9 @@ loader.load(
                 child.material = newMaterial;
             }
         });
-        gltf.scene.position.set(0,0,-5)
+        gltf.scene.position.set(0,0,-0.1)
         dirkLogo = gltf.scene;
-        scene.add(gltf.scene);
+        scene.add(dirkLogo);
     },
     function (xhr) {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded'); // Optional: console logging loading progress
@@ -55,15 +54,18 @@ scene.add(directionalLight);
 // const cube = new THREE.Mesh(geometry, material);
 // scene.add(cube);
 
-camera.position.z = 5;
+camera.position.z = 15;
 
 const clock = new THREE.Clock()
 
 const tick = () => 
 {
     const elapsedTime = clock.getElapsedTime();
-    // dirkLogo.rotation.x += 0.01;
-    // dirkLogo.rotation.y += 0.01;
+    if (dirkLogo != null){
+        dirkLogo.rotation.z = (Math.sin(elapsedTime) * 0.5);
+        dirkLogo.rotation.y += 0.01;
+    }
+
 
 
     renderer.render(scene, camera);
