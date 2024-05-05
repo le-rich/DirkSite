@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
     <script type="importmap">
         {
           "imports": {
@@ -20,18 +22,19 @@
     <script type="module" src="js/main.js"></script>
 </head>
 <body>
-    <div class="">
+    <div>
         <div id="main-splash" class="w-screen h-screen">
-                <video class="top-0 left-0 h-full w-full object-cover border-transparent" autoplay playsinline loop muted>
-                    <source src="assets/video/dirksplash.mp4">
+                <video id="splash-video" class="top-0 left-0 h-full w-full object-cover border-transparent" autoplay playsinline loop muted>
+                    <source src="assets/video/dirksplash2.mp4">
                     Your browser does not support the video tag.
                 </video>
-                <div class="absolute bottom-0 left-0 text-white p-5 m-5 sm:text-xl md:text-4xl">
+                <div class="absolute bottom-0 left-0 text-neutral-950 p-5 m-5 sm:text-xl md:text-4xl font-black tracking-wider">
                     DIRK is a games development studio <br>
                     and realtime experience consultancy
                 </div>
         </div>
     </div>
     <div id="WebGLCanvasWrapper" class="fixed top-0 left-0 w-full h-full z-10"></div>
+
 </body>
 </html>

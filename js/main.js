@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
+// THREE JS
 
 // Set up the scene, camera, and renderer
 const scene = new THREE.Scene();
@@ -21,7 +22,7 @@ loader.load(
     'assets/3d/Dirk3DLogoFull.glb', // Path to your GLB file
     function (gltf) {
         // Called when the model is loaded
-        const newMaterial = new THREE.MeshStandardMaterial({color: 0xffffff, metalness: 0.0, roughness: 1, opacity: 1, transparent: true, side: THREE.DoubleSide});
+        const newMaterial = new THREE.MeshStandardMaterial({color: 0x05050a, metalness: 0.0, roughness: 1, opacity: 1, transparent: true, side: THREE.DoubleSide});
         gltf.scene.traverse(function (child) {
             if (child.isMesh) {
                 // Adjusting the existing material
@@ -29,6 +30,7 @@ loader.load(
             }
         });
         gltf.scene.position.set(0,0,-0.1)
+        gltf.scene.scale.set(1.5,1.5,1.5);
         dirkLogo = gltf.scene;
         scene.add(dirkLogo);
     },
@@ -63,7 +65,7 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime();
     if (dirkLogo != null){
         dirkLogo.rotation.z = (Math.sin(elapsedTime) * 0.5);
-        dirkLogo.rotation.y += 0.01;
+        dirkLogo.rotation.y += 0.005;
     }
 
 
