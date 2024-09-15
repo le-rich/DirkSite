@@ -4,28 +4,18 @@
     <title>Dirk - Game Studio and Consultancy</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <script type="importmap">
-        {
-          "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"
-          }
-        }
-      </script>
-<!--    <script src="https://cdn.tailwindcss.com"></script>-->
-    <link href="./css/output.css" rel="stylesheet">
-    <script type="module" src="js/main.js"></script>
+    <link href="./src/css/output.css" rel="stylesheet">
+    <script type="module" src="./src/js/main.js"></script>
 </head>
 <body>
     <div>
         <div id="main-splash" class="w-screen h-screen">
                 <video id="splash-video" class="top-0 left-0 h-full w-full object-cover border-transparent" autoplay playsinline loop muted>
-                    <source src="assets/video/dirksplash2.mp4">
+                    <source src="./src/assets/video/dirksplash2.mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div id="splash-text" class="absolute bottom-0 left-0 text-neutral-950 p-5 m-5 sm:text-xl md:text-4xl font-black tracking-wider">

@@ -21,7 +21,7 @@ let dirkLogo = null;
 // let clones = [];
 
 loader.load(
-    'assets/3d/Dirk3DLogoFull.glb', // Path to your GLB file
+    './src/assets/3d/Dirk3DLogoFull.glb', // Path to your GLB file
     function (gltf) {
         // Called when the model is loaded
         const newMaterial = new THREE.MeshStandardMaterial({color: 0x05050a, metalness: 0, roughness: 0.4, opacity: 1, transparent: true, side: THREE.DoubleSide});
@@ -50,6 +50,7 @@ loader.load(
     },
     function (error) {
         console.log('An error happened'); // Optional: console logging loading errors
+        throw error;
     }
 );
   
