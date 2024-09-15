@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
+
 // THREE JS
 
 // Set up the scene, camera, and renderer
