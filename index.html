@@ -4,38 +4,56 @@
     <title>Dirk - Game Studio and Consultancy</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <script type="importmap">
-        {
-          "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"
-          }
-        }
-      </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="js/main.js"></script>
+    <link href="./src/css/stylesheet.css" rel="stylesheet">
+    <script type="module" src="./src/js/main.js" async></script>
 </head>
 <body>
-    <div>
-        <div id="main-splash" class="w-screen h-screen">
-                <video id="splash-video" class="top-0 left-0 h-full w-full object-cover border-transparent" autoplay playsinline loop muted>
-                    <source src="assets/video/dirksplash2.mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div id="splash-text" class="absolute bottom-0 left-0 text-neutral-950 p-5 m-5 sm:text-xl md:text-4xl font-black tracking-wider">
-                    DIRK is a games development studio <br>
-                    and realtime experience consultancy
-                    <br><br>
-                    Full studio website in development.
+<div class="min-h-screen bg-white flex flex-col p-6 md:p-12">
+    <main class="flex-grow flex flex-col justify-center max-w-6xl mx-auto w-full">
+        <video id="splash-video" class="top-0 left-0 h-36 w-full object-cover border-transparent mb-16" autoplay playsinline loop muted>
+            <source src="./src/assets/video/dirksplash2.mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-4 -ml-[4px] md:-ml-[8px] lg:-ml-[10px]">
+            DIRK
+        </h1>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end">
+            <div class="mb-6 md:mb-0">
+                <p class="text-sm md:text-base max-w-md">
+                    Dirk is a video game studio from Vancouver, British Columbia.
+                </p>
+                <p class="text-sm md:text-base mt-2">
+                    We are working on our debut title.
+                </p>
+            </div>
+            <nav class="flex flex-col md:items-end space-y-1">
+                <a href="/career" class="text-sm md:text-base hover:underline">
+                    Career
+                </a>
+                <a href="/contact" class="text-sm md:text-base hover:underline">
+                    Contact
+                </a>
+                <div class="pt-2 flex items-center space-x-4">
+                    <a href="https://instagram.com" aria-label="Instagram">
+                        <img width="24" height="24" src="./src/assets/socials/Instagram_Glyph_Black.svg" alt="Instagram"/>
+                    </a>
+                    <a href="https://github.com" aria-label="GitHub">
+                        <img width="24" height="24" src="./src/assets/socials/github-mark.svg" alt="Github"/>
+                    </a>
+                    <a href="" aria-label="Email">
+                        <img width="24" height="24" src="./src/assets/socials/envelope-regular.svg" alt="Email"/>
+                    </a>
                 </div>
+            </nav>
         </div>
-    </div>
-    <div id="WebGLCanvasWrapper" class="fixed top-0 left-0 w-full h-full z-10"></div>
-
+    </main>
+    <footer class="mt-8 text-center text-xs text-gray-500">
+        © <span id="copyright"></span> DIRK. All rights reserved.
+    </footer>
+</div>
 </body>
 </html>
